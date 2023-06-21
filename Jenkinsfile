@@ -24,8 +24,8 @@ node{
     
     stage('Build the Application'){
         echo "Cleaning... Compiling...Testing... Packaging..."
-        //sh 'mvn clean package'
-        sh "${mavenCMD} clean package"        
+        sh 'mvn clean package'
+                
     }
     
    
