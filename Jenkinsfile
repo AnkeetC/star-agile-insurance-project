@@ -37,7 +37,7 @@ node{
     
     stage('Pushing it ot the DockerHub'){
         echo 'Pushing the docker image to DockerHub'
-       ithCredentials([usernamePassword(credentialsId: 'dockerCred', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
+       withCredentials([usernamePassword(credentialsId: 'dockerCred', usernameVariable: 'dockerUser', passwordVariable: 'dockerPassword')]) {
             sh "docker login -u $dockerUser -p $dockerPassword"
             sh "docker push ankeetchauhan505/insure-me"
             echo "Image push complete"
